@@ -176,6 +176,7 @@ class __SlidesState extends State<_Slides> {
     return Container(
       child: PageView(
         controller: pageViewController,
+        physics: BouncingScrollPhysics(),
         // children: <Widget>[
         //   _Slide( 'assets/svgs/slide-1.svg' ),
         //   _Slide( 'assets/svgs/slide-2.svg' ),
