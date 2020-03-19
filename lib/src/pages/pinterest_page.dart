@@ -1,3 +1,4 @@
+import 'package:disenos/src/theme/theme.dart';
 import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
@@ -36,8 +37,8 @@ class _PinterestMenuLocation extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final widthPantalla = MediaQuery.of(context).size.width;
-
     final mostrar = Provider.of<_MenuModel>(context).mostrar;
+    final appTheme = Provider.of<ThemeChanger>(context).currentTheme;
 
     return Positioned(
       bottom: 30,
@@ -46,8 +47,8 @@ class _PinterestMenuLocation extends StatelessWidget {
         child: Align(
           child: PinterestMenu(
             mostrar: mostrar,
-            // backgroundColor: Colors.red,
-            // activeColor: Colors.red,
+            backgroundColor: appTheme.scaffoldBackgroundColor,
+            activeColor: appTheme.accentColor,
             // inactiveColor: Colors.blue,
             items: [
               PinterestButton(icon: Icons.pie_chart, onPressed: (){ print('Icon pie_chart'); } ), 
